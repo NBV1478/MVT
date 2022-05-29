@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render
 
+from proyecto_1.familiares.views import familiares
+
 
 def fecha_actual(request):
     fecha = datetime.now().date()
@@ -19,5 +21,11 @@ def integrantes(request):
     mensaje = f"Mi mamá se llama {mama},su edad es {edades[0]} y mis hermanos son {hermano_1}, su edad es {edades[1]} y {hermano_2}, su edad es {edades[2]}"
     return HttpResponse(mensaje)  
 
+
 def template(request):
+    #consulta_db = familiares.objects.all()
+    #return render(request, "template1.html", contex = {"familiares": consulta_db})
+
+
+
     return render(request, "template1.html", context = [])
