@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from proyecto_1.views import familia, integrantes, template, fecha_actual
-from familiares.views import familiares
+
+
+from familiares.views import mostrar_familiares
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("familia/", familia, name = "familia" ),
-    path("integrantes/", integrantes, name = "integrantes"),
-    path("fecha_actual/",fecha_actual, name = "fecha_actual"),
-    path("template/", template, name = "template"),
-    path("familiares/", familiares, none = "familiares")
+    # path("familia/", familia, name = "familia" ),
+    # path("integrantes/", integrantes, name = "integrantes"),
+    # path("fecha_actual/",fecha_actual, name = "fecha_actual"),
+    # path("template/", template, name = "template"),
+    path("familiares/", mostrar_familiares, name = "familiares")
 ]
